@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Toaster } from 'react-hot-toast';
-import Navbar from './components/Navbar';
-import Dashboard from './pages/Dashboard';
-import Chat from './pages/Chat';
-import Portfolio from './pages/Portfolio';
-import Strategies from './pages/Strategies';
-import Analytics from './pages/Analytics';
-import { APIProvider } from './contexts/APIContext';
+import Navbar from './components/Navbar.tsx';
+import Dashboard from './pages/Dashboard.tsx';
+import Chat from './pages/Chat.tsx';
+import Portfolio from './pages/Portfolio.tsx';
+import Strategies from './pages/Strategies.tsx';
+import Analytics from './pages/Analytics.tsx';
+import RiskManager from './pages/RiskManager.tsx';
+import YieldFarming from './pages/YieldFarming.tsx';
+import FlashLoans from './pages/FlashLoans.tsx';
+import DeFiLab from './pages/DeFiLab.tsx';
+import { APIProvider } from './contexts/APIContext.tsx';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -46,6 +50,10 @@ function App() {
                 <Route path="/portfolio" element={<Portfolio />} />
                 <Route path="/strategies" element={<Strategies />} />
                 <Route path="/analytics" element={<Analytics />} />
+                <Route path="/risk-manager" element={<RiskManager />} />
+                <Route path="/yield-farming" element={<YieldFarming />} />
+                <Route path="/flash-loans" element={<FlashLoans />} />
+                <Route path="/defi-lab" element={<DeFiLab />} />
               </Routes>
             </main>
             

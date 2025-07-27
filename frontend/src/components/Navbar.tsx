@@ -7,7 +7,11 @@ import {
   CogIcon, 
   ChartBarIcon,
   SunIcon,
-  MoonIcon 
+  MoonIcon,
+  ShieldCheckIcon,
+  CurrencyDollarIcon,
+  BoltIcon,
+  BeakerIcon 
 } from '@heroicons/react/24/outline';
 
 interface NavbarProps {
@@ -20,10 +24,14 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
 
   const navigation = [
     { name: 'Dashboard', href: '/', icon: HomeIcon },
-    { name: 'Chat', href: '/chat', icon: ChatBubbleLeftRightIcon },
+    { name: 'AI Chat', href: '/chat', icon: ChatBubbleLeftRightIcon },
     { name: 'Portfolio', href: '/portfolio', icon: WalletIcon },
     { name: 'Strategies', href: '/strategies', icon: CogIcon },
     { name: 'Analytics', href: '/analytics', icon: ChartBarIcon },
+    { name: 'Risk Manager', href: '/risk-manager', icon: ShieldCheckIcon },
+    { name: 'Yield Farming', href: '/yield-farming', icon: CurrencyDollarIcon },
+    { name: 'Flash Loans', href: '/flash-loans', icon: BoltIcon },
+    { name: 'DeFi Lab', href: '/defi-lab', icon: BeakerIcon },
   ];
 
   return (

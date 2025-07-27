@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useQuery } from 'react-query';
-import { useAPI } from '../contexts/APIContext';
+import { useAPI } from '../contexts/APIContext.tsx';
 import toast from 'react-hot-toast';
 import { 
   ChartBarIcon, 
