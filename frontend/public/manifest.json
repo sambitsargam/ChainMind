@@ -1,0 +1,16 @@
+{
+  "name": "ChainMind - AI DeFi Strategist",
+  "short_name": "ChainMind",
+  "description": "Autonomous AI-Powered DeFi Strategy Management",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/brain-icon.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml"
+    }
+  ]
+}

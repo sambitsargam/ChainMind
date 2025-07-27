@@ -44,5 +44,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/sambitsargam/ChainMind.git"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "dotenv": "^17.2.1"
   }
 }
