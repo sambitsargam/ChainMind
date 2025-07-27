@@ -220,7 +220,7 @@ export class DecisionEngine {
                 decisionId,
                 success: txResult.success,
                 transactionHash: txResult.hash,
-                gasUsed: parseInt(txResult.gasUsed),
+                gasUsed: Number(txResult.gasUsed),
                 timestamp
             };
         } catch (error) {

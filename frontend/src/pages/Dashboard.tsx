@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 import { 
   ChartBarIcon, 
   CurrencyDollarIcon, 
-  TrendingUpIcon, 
+  ArrowTrendingUpIcon, 
   ShieldCheckIcon,
   PlayIcon,
   StopIcon 
@@ -127,7 +127,7 @@ const Dashboard: React.FC = () => {
               <p className="text-sm text-gray-400">Success Rate</p>
               <p className="text-lg font-semibold text-white">{status?.successRate?.toFixed(1) || 0}%</p>
             </div>
-            <TrendingUpIcon className="w-8 h-8 text-green-500" />
+            <ArrowTrendingUpIcon className="w-8 h-8 text-green-500" />
           </div>
         </div>
 

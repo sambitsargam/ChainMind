@@ -203,8 +203,8 @@ export class BlockchainClient {
     async getGasPrice(network: string): Promise<string> {
         try {
             const provider = await this.getProvider(network);
-            const gasPrice = await provider.getGasPrice();
-            return ethers.formatUnits(gasPrice, 'gwei');
+            const feeData = await provider.getFeeData();
+            return ethers.formatUnits(feeData.gasPrice || 0, 'gwei');
         } catch (error) {
             this.logger.error(`Error getting gas price for ${network}:`, error);
             throw error;
@@ -267,15 +267,15 @@ export class BlockchainClient {
     async getNetworkInfo(network: string): Promise<any> {
         try {
             const provider = await this.getProvider(network);
-            const [blockNumber, gasPrice] = await Promise.all([
+            const [blockNumber, feeData] = await Promise.all([
                 provider.getBlockNumber(),
-                provider.getGasPrice()
+                provider.getFeeData()
             ]);
 
             return {
                 network,
                 blockNumber,
-                gasPrice: ethers.formatUnits(gasPrice, 'gwei'),
+                gasPrice: ethers.formatUnits(feeData.gasPrice || 0, 'gwei'),
                 chainId: (await provider.getNetwork()).chainId.toString()
             };
         } catch (error) {

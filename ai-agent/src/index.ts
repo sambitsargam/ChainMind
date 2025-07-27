@@ -14,11 +14,11 @@ dotenv.config();
 
 class ChainMindServer {
     private app: express.Application;
-    private aiAgent: AIAgent;
-    private mcpClient: NoditMCPClient;
-    private blockchainClient: BlockchainClient;
-    private decisionEngine: DecisionEngine;
-    private strategyMonitor: StrategyMonitor;
+    private aiAgent!: AIAgent;
+    private mcpClient!: NoditMCPClient;
+    private blockchainClient!: BlockchainClient;
+    private decisionEngine!: DecisionEngine;
+    private strategyMonitor!: StrategyMonitor;
     private logger: Logger;
 
     constructor() {
@@ -179,14 +179,16 @@ class ChainMindServer {
     }
 
     public async start(): Promise<void> {
-        const port = process.env.PORT || 3001;
+        const port = process.env.PORT || 3002;
         
         this.app.listen(port, () => {
             this.logger.info(`ChainMind AI Agent started on port ${port}`);
         });
 
-        // Start the strategy monitor
-        await this.strategyMonitor.start();
+        // Start the strategy monitor if it was initialized successfully
+        if (this.strategyMonitor) {
+            await this.strategyMonitor.start();
+        }
     }
 }
 
