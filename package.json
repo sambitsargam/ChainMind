@@ -1,0 +1,48 @@
+{
+  "name": "chainmind",
+  "version": "1.0.0",
+  "description": "ChainMind - Autonomous AI-Powered DeFi Strategist",
+  "main": "ai-agent/dist/index.js",
+  "scripts": {
+    "setup": "chmod +x scripts/setup.sh && ./scripts/setup.sh",
+    "build": "npm run build:ai && npm run build:frontend",
+    "build:ai": "cd ai-agent && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "start": "concurrently \"npm run start:ai\" \"npm run start:frontend\"",
+    "start:ai": "cd ai-agent && npm run start",
+    "start:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:ai\" \"npm run dev:frontend\"",
+    "dev:ai": "cd ai-agent && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "test": "npm run test:ai",
+    "test:ai": "cd ai-agent && npm run test",
+    "lint": "npm run lint:ai && npm run lint:frontend",
+    "lint:ai": "cd ai-agent && npm run lint",
+    "lint:frontend": "cd frontend && npm run lint",
+    "deploy": "forge script scripts/Deploy.s.sol --broadcast --verify",
+    "clean": "rm -rf ai-agent/dist frontend/dist ai-agent/logs/*"
+  },
+  "keywords": [
+    "defi",
+    "ai",
+    "blockchain",
+    "ethereum",
+    "autonomous",
+    "strategy",
+    "mcp",
+    "nodit"
+  ],
+  "author": "ChainMind Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sambitsargam/ChainMind.git"
+  }
+}

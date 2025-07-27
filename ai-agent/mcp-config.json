@@ -1,0 +1,57 @@
+{
+  "mcpServers": {
+    "nodit": {
+      "command": "npx",
+      "args": ["@noditlabs/nodit-mcp-server@latest"],
+      "env": {
+        "NODIT_API_KEY": "your-nodit-api-key-here"
+      }
+    }
+  },
+  "tools": {
+    "getTokenBalance": {
+      "description": "Get token balance for a specific address",
+      "parameters": {
+        "address": "string",
+        "tokenAddress": "string",
+        "chain": "string"
+      }
+    },
+    "getTokenTransfersByAccount": {
+      "description": "Get token transfers for an account",
+      "parameters": {
+        "address": "string",
+        "chain": "string",
+        "limit": "number"
+      }
+    },
+    "getTokenPrice": {
+      "description": "Get current token price",
+      "parameters": {
+        "tokenAddress": "string",
+        "chain": "string"
+      }
+    },
+    "getPoolLiquidity": {
+      "description": "Get DEX pool liquidity information",
+      "parameters": {
+        "poolAddress": "string",
+        "chain": "string"
+      }
+    },
+    "getLendingRates": {
+      "description": "Get lending/borrowing rates from DeFi protocols",
+      "parameters": {
+        "protocol": "string",
+        "asset": "string",
+        "chain": "string"
+      }
+    }
+  },
+  "aiConfig": {
+    "model": "gpt-4",
+    "temperature": 0.3,
+    "maxTokens": 2000,
+    "systemPrompt": "You are ChainMind, an autonomous DeFi strategist. Analyze market data and make optimal rebalancing decisions."
+  }
+}
